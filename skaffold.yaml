@@ -7,8 +7,10 @@ deploy:
 build:
   local:
     push: false
+  googleClouodBuild:
+    projectId: ticketing-444223
   artifacts:
-    - image: maorhadad1/auth
+    - image: us.gcr.io/ticketing-444223/auth
       context: auth
       docker:
         dockerfile: Dockerfile
