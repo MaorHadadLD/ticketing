@@ -3,11 +3,11 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-      - infra/k8s/*
+      - ./infra/k8s/*
 build:
-  local:
-    push: false
-  googleClouodBuild:
+  # local:
+  #   push: false
+  googleCloudBuild:
     projectId: ticketing-444223
   artifacts:
     - image: us.gcr.io/ticketing-444223/auth
