@@ -5,7 +5,7 @@ export class DatabaseConnectionError extends CustomError {
     reason = 'Error connection to database';
 
     constructor() {
-        super();
+        super('Invalid requset parameters');
 
         Object.setPrototypeOf(this, DatabaseConnectionError.prototype);
     }
