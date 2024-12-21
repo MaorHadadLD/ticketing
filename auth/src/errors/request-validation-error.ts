@@ -12,7 +12,10 @@ export class RequestValidationError extends Error {
 
     serializeErrors() {
         return this.errors.map(err => {
-            return {message: err.msg, field: err.type};
+            if (err.type == 'field') {
+             return {message: err.msg, field: err.path};
+            }
+            return {message: err.msg};
         });
     }
 }
