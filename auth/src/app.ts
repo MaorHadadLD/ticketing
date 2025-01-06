@@ -16,7 +16,7 @@ app.use(json());
 app.use(
   cookieSession({
     signed: false,
-    secure: true,
+    secure: true
   })
 );
 
@@ -26,12 +26,11 @@ app.use(signoutRouter);
 app.use(signupRouter);
 
 app.all('*', async (req, res) => {
-    throw new NotFoundError();
-  });
-  
-  // Error handling middleware must be used last
-  app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
-    errorHandler(err, req, res, next);
-  });
+  throw new NotFoundError();
+});
 
-  export { app };
+app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  errorHandler(err, req, res, next);
+});
+
+export { app };

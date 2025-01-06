@@ -9,10 +9,8 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "testEnviroment": "node",
-    "setupFilesAfterEnv": [
-      "//src/test/setup.ts"
-    ]
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": ["<rootDir>/src/test/setup.ts"]
   },
   "keywords": [],
   "author": "",
