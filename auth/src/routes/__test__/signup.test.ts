@@ -30,3 +30,20 @@ it('returns a 400 with an invalid email', async () => {
       })
       .expect(400);
   });
+
+  it('returns a 400 with missing email and password', async () => {
+    await request(app)
+      .post('/api/users/signup')
+      .send({
+        email: 'test@test.com'
+      })
+      .expect(400);
+  
+    await request(app)
+      .post('/api/users/signup')
+      .send({
+        password: 'alskjdf'
+      })
+      .expect(400);
+  });
+  
