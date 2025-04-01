@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
 
 import { app } from './app';
 
@@ -14,8 +16,8 @@ import { app } from './app';
             console.log(err);
         }
 
-        app.listen(3000, () => {
-            console.log('Listening on port 3000!!!!!!!!');
+        app.listen(3001, () => {
+            console.log('Listening on port 3001!!!!!!!!');
          });
     };
 
